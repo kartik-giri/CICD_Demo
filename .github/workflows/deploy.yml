@@ -28,4 +28,9 @@ jobs:
           key: ${{secrets.CD_SECRET_FOR_VM}}
           port: 22
           #Runs these commands on my EC2
-          script: ./deploy.sh
+          script: |
+           cd ~/CICD_Demo
+           git pull origin main
+           npm install
+           npm run build
+           npm run start
