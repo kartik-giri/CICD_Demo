@@ -23,7 +23,7 @@ jobs:
         #DO SSH from runner VM to our EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 13.201.44.176
+          host: ubuntu@ec2-3-6-215-131.ap-south-1.compute.amazonaws.com
           username: ubuntu
           key: ${{secrets.CD_SECRET_FOR_VM}}
           port: 22
