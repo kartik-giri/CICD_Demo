@@ -19,13 +19,13 @@ jobs:
         #clone the repo
         uses: actions/checkout@v2
 
-      - name: executing remote ssh commands using password
+      - name: executing remote ssh commands using key
         #DO SSH from runner VM to our EC2
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: 13.201.44.176
           username: ubuntu
-          key: ${{ secrets.CD_SECRET_FOR_VM }}
+          key: ${{secrets.CD_SECRET_FOR_VM}}
           port: 22
           #Runs these commands on my EC2
           script: ./deploy.sh
